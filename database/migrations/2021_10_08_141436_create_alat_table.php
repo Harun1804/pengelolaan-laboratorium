@@ -16,6 +16,7 @@ class CreateAlatTable extends Migration
         Schema::create('alat', function (Blueprint $table) {
             $table->id();
             $table->string('nama_alat',50);
+            $table->string('gambar',255);
             $table->string('serial_number',100);
             $table->timestamps();
         });

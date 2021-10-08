@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomepageController::class,'index'])->name('home');
+Route::get('about',[HomepageController::class,'about'])->name('about');
+Route::get('auth',[HomepageController::class,'auth'])->name('login');
+Route::post('login',[AuthController::class,'login'])->name('verify.login');
+Route::post('register',[AuthController::class,'registrasi'])->name('register');
+Route::get('logout',[AuthController::class,'logout'])->name('logout');

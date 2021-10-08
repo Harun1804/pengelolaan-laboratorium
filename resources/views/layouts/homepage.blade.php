@@ -20,46 +20,58 @@
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/atlantis.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/atlantis2.css') }}">
 	@yield('css-vendor')
 	@yield('css-script')
 </head>
 <body>
-	<div class="wrapper">
-        @include('layouts.admin.header')
-        @include('layouts.admin.sidebar')
+	<div class="wrapper horizontal-layout-3">
+		@include('layouts.homepage.header')
 
 		<div class="main-panel">
-			<div class="container">
-                @yield('content')
-			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="http://www.themekita.com">
-									ThemeKita
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
-					</div>				
+
+			<div class="bg-primary2 pt-4 pb-5">
+				<div class="container text-white py-2">
+					<div class="d-flex align-items-center">
+						<div class="mr-3">
+							<h1 class="mb-3">@yield('header-title')</h1>
+						</div>
+					</div>
 				</div>
-			</footer>
+			</div>
+
+			<div class="container mt--5">
+				<div class="page-inner mt--3">
+					@yield('content')
+				</div>
+			</div>
 		</div>
+		<footer class="footer">
+			<div class="container">
+				<nav class="pull-left">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" href="http://www.themekita.com">
+								ThemeKita
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Help
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Licenses
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="copyright ml-auto">
+					2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
+				</div>				
+			</div>
+		</footer>
 	</div>
 	<!--   Core JS Files   -->
 	<script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
@@ -128,16 +140,10 @@
 	<!-- Sweet Alert -->
 	<script src="{{ asset('assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
 
-	<!-- Owl Carousel -->
-	<script src="{{ asset('assets/js/plugin/owl-carousel/owl.carousel.min.js') }}"></script>
-
-	<!-- Magnific Popup -->
-	<script src="{{ asset('assets/js/plugin/jquery.magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-
 	<!-- Atlantis JS -->
-	<script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
+	<script src="{{ asset('assets/js/atlantis2.min.js') }}"></script>
 
-    @yield('modal')
+	@yield('modal')
 	@yield('js-vendor')
 	@yield('js-script')
 </body>

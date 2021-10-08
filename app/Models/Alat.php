@@ -12,6 +12,12 @@ class Alat extends Model
     protected $table = 'alat';
     protected $fillable = [
         'nama_alat',
+        'gambar',
         'serial_number'
     ];
+
+    public function getGambarAttribute($value)
+    {
+        return url('storage/'.$value);
+    }
 }
