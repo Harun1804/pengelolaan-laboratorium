@@ -10,7 +10,7 @@ class CreateAlatKegiatanTable extends Migration
     {
         Schema::create('alat_kegiatan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('personil_id')->constrained('personil');
             $table->foreignId('alat_id')->constrained('alat');
             $table->foreignId('kegiatan_id')->constrained('kegiatan');
             $table->date('tanggal_cek');

@@ -20,4 +20,9 @@ class Alat extends Model
     {
         return url('storage/'.$value);
     }
+
+    public function kehiatan()
+    {
+        return $this->belongsToMany(Kegiatan::class,'alat_kegiatan','alat_id','kegiatan_id');
+    }
 }

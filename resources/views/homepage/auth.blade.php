@@ -25,12 +25,18 @@
 <body class="login">
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
+			@if (session('success'))
+				<div class="alert alert-success">{{ session('success') }}</div>
+			@endif
+			@if (session('failed'))
+				<div class="alert alert-danger">{{ session('failed') }}</div>
+			@endif
 			<h3 class="text-center">Halaman Login</h3>
 			<div class="login-form">
 				<form action="{{ route('verify.login') }}" method="post">
 					@csrf
 					<div class="form-group form-floating-label">
-						<input id="username" name="username" type="text" class="form-control input-border-bottom" required>
+						<input id="username" name="username" type="text" class="form-control input-border-bottom" required autocomplete="off">
 						<label for="username" class="placeholder">Username</label>
 					</div>
 					<div class="form-group form-floating-label">
@@ -58,34 +64,45 @@
 				<form action="{{ route('register') }}" method="post">
 					@csrf
 					<div class="form-group form-floating-label">
-						<input  id="fullname" name="fullname" type="text" class="form-control input-border-bottom" required>
+						<input  id="fullname" name="fullname" type="text" class="form-control input-border-bottom @error('fullname') is-invalid @enderror" required value="{{ old('fullname') }}">
 						<label for="fullname" class="placeholder">Fullname</label>
+						@error('fullname')
+							<small class="text text-danger">{{ $message }}</small>
+						@enderror
 					</div>
 					<div class="form-group form-floating-label">
-						<input  id="username" name="username" type="text" class="form-control input-border-bottom" required>
+						<input  id="username" name="username" type="text" class="form-control input-border-bottom @error('username') is-invalid @enderror" required value="{{ old('username') }}">
 						<label for="username" class="placeholder">Username</label>
+						@error('username')
+							<small class="text text-danger">{{ $message }}</small>
+						@enderror
 					</div>
 					<div class="form-group form-floating-label">
-						<input  id="email" name="email" type="email" class="form-control input-border-bottom" required>
+						<input  id="email" name="email" type="email" class="form-control input-border-bottom @error('email') is-invalid @enderror" required value="{{ old('email') }}">
 						<label for="email" class="placeholder">Email</label>
+						@error('email')
+							<small class="text text-danger">{{ $message }}</small>
+						@enderror
 					</div>
 					<div class="form-group form-floating-label">
-						<input  id="nohp" name="nohp" type="text" class="form-control input-border-bottom" required>
-						<label for="nohp" class="placeholder">No HP</label>
-					</div>
-					<div class="form-group form-floating-label">
-						<input  id="password" name="password" type="password" class="form-control input-border-bottom" required>
+						<input  id="password" name="password" type="password" class="form-control input-border-bottom @error('password') is-invalid @enderror" required>
 						<label for="password" class="placeholder">Password</label>
 						<div class="show-password">
 							<i class="icon-eye"></i>
 						</div>
+						@error('password')
+							<small class="text text-danger">{{ $message }}</small>
+						@enderror
 					</div>
 					<div class="form-group form-floating-label">
-						<input  id="cpassword" name="cpassword" type="password" class="form-control input-border-bottom" required>
+						<input  id="cpassword" name="cpassword" type="password" class="form-control input-border-bottom @error('cpassword') is-invalid @enderror" required>
 						<label for="cpassword" class="placeholder">Confirm Password</label>
 						<div class="show-password">
 							<i class="icon-eye"></i>
 						</div>
+						@error('cpassword')
+							<small class="text text-danger">{{ $message }}</small>
+						@enderror
 					</div>
 					<div class="form-action">
 						<a href="#" id="show-signin" class="btn btn-danger btn-link btn-login mr-3">Batal</a>
@@ -95,10 +112,10 @@
 			</div>
 		</div>
 	</div>
-	<script src="{{ asset('') }}assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="{{ asset('') }}assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="{{ asset('') }}assets/js/core/popper.min.js"></script>
-	<script src="{{ asset('') }}assets/js/core/bootstrap.min.js"></script>
-	<script src="{{ asset('') }}assets/js/atlantis.min.js"></script>
+	<script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
+	<script src="{{ asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+	<script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
 </body>
 </html>

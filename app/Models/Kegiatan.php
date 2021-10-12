@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\KategoriKegiatan;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -13,12 +12,14 @@ class Kegiatan extends Model
     protected $table = 'kegiatan';
     protected $fillable = [
         'nama_kegiatan',
+        'kelompok_kegiatan',
         'periode',
-        'kategori_id'
+        'kategori',
+        'jenis'
     ];
 
-    public function kategori()
+    public function alat()
     {
-        return $this->belongsTo(KategoriKegiatan::class,'kategori_id');
+        return $this->belongsToMany(Alat::class,'alat_kegiatan','kegiatan_id','alat_id')->withPivot('personil_id','tanggal_cek','keterangan')->withTimestamps();
     }
 }

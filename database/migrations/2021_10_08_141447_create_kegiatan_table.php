@@ -11,8 +11,10 @@ class CreateKegiatanTable extends Migration
         Schema::create('kegiatan', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kegiatan',50);
+            $table->enum('kelompok_kegiatan',['pre_on','pre_off','pre_run','post_run'])->nullable();
             $table->enum('periode',['harian','mingguan','bulanan']);
-            $table->foreignId('kategori_id')->constrained('katergori_kegiatan');
+            $table->enum('kategori',['maintenance','monitoring dan evaluasi','penggunaan alat','pemeliharaan']);
+            $table->enum('jenis',['kimia klinik','hematologi','urinalisis']);
             $table->timestamps();
         });
     }
