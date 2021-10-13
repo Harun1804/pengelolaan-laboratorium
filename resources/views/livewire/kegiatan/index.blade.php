@@ -16,7 +16,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <div class="card-title">Alat
+                <div class="card-title">Kegiatan
                     <div class="float-right">
                         <button class="btn btn-sm btn-primary" type="button" wire:click="create">Tambah Data Kegiatan</button>
                     </div>

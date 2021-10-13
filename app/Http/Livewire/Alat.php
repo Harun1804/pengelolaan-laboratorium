@@ -55,7 +55,7 @@ class Alat extends Component
 
         $this->formMode = false;
         $this->resetInput();
-        session()->flash('success','Data Berhasil Ditambahkan');
+        $this->alert('Ditambahkan');
     }
 
     public function edit($id)
@@ -96,7 +96,7 @@ class Alat extends Component
         $this->formMode = false;
         $this->editMode = false;
         $this->resetInput();
-        session()->flash('success','Data Berhasil Diubah');
+        $this->alert('Diperbaharui');
     }
 
     public function alertConfirm($id)
@@ -117,9 +117,14 @@ class Alat extends Component
         $path = public_path('storage/img/alat/'.$text[6]);
         unlink($path);
         $alat->delete($this->id);
+        $this->alert('Dihapus');
+    }
+
+    public function alert($status)
+    {
         $this->dispatchBrowserEvent('swal:modal', [
             'type' => 'success',  
-            'message' => 'Data Berhasil Dihapus'
+            'message' => 'Data Berhasil '.$status
         ]);
     }
 }
