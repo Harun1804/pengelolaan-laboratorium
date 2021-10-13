@@ -18,6 +18,7 @@ class CreateAlatTable extends Migration
             $table->string('nama_alat',50);
             $table->string('gambar',255);
             $table->string('serial_number',100);
+            $table->enum('jenis',['kimia klinik','hematologi','urinalisis']);
             $table->timestamps();
         });
     }

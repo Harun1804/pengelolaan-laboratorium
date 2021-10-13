@@ -13,9 +13,7 @@ class Kegiatan extends Model
     protected $fillable = [
         'nama_kegiatan',
         'kelompok_kegiatan',
-        'periode',
-        'kategori',
-        'jenis'
+        'kategori'
     ];
 
     public function alat()

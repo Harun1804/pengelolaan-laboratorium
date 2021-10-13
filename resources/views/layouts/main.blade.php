@@ -23,6 +23,12 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/atlantis.css') }}">
 	@yield('css-vendor')
 	@yield('css-script')
+
+	<style>
+		.empty-data {
+			text-align: center
+		}
+	</style>
 </head>
 <body>
 	<div class="wrapper">

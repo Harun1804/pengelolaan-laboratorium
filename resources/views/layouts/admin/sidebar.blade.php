@@ -9,15 +9,20 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Hizrian
-                            <span class="user-level">Administrator</span>
+                            {{ auth()->user()->username }}
+                            <span class="user-level">{{ ucfirst(auth()->user()->role) }}</span>
                         </span>
                     </a>
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item active">
-                    <a href="#">
+                <li class="nav-item @if(Request::segment(2) == 'dashboard') active @endif">
+                    <a href="
+                    @if (auth()->user()->role == 'admin')
+                        {{ route('admin.dashboard') }}
+                    @else
+                        {{ route('petugas.dashboard') }}    
+                    @endif">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
@@ -29,6 +34,15 @@
                     </span>
                     <h4 class="text-section">Menu</h4>
                 </li>
+
+                @if (auth()->user()->role == 'admin')
+                    <li class="nav-item @if(Request::segment(2) == 'personil') active @endif">
+                        <a href="{{ route('admin.personil') }}">
+                            <i class="fas fa-users"></i>
+                            <p>Personil</p>
+                        </a>
+                    </li>
+                @endif
                 
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#base">

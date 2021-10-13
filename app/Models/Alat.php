@@ -13,7 +13,8 @@ class Alat extends Model
     protected $fillable = [
         'nama_alat',
         'gambar',
-        'serial_number'
+        'serial_number',
+        'jenis'
     ];
 
     public function getGambarAttribute($value)
