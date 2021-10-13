@@ -17,7 +17,6 @@ class CreateDetailAlatTable extends Migration
             $table->id();
             $table->foreignId('alat_id')->constrained('alat');
             $table->foreignId('kegiatan_id')->constrained('kegiatan');
-            $table->enum('periode',['harian','mingguan','bulanan']);
             $table->timestamps();
         });
     }

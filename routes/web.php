@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard',[AdminController::class,'dashboard'])->name('dashboard');
         Route::get('personil',[AdminController::class,'personil'])->name('personil');
+        Route::get('alat',[AdminController::class,'alat'])->name('alat');
     });
 
     Route::prefix('petugas')->name('petugas.')->group(function () {

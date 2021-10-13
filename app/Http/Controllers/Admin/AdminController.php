@@ -18,4 +18,9 @@ class AdminController extends Controller
         $personils = Personil::all();
         return view('admin.personil',compact('personils'));
     }
+
+    public function alat()
+    {
+        return view('admin.alat');
+    }
 }

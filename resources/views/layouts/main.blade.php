@@ -143,6 +143,30 @@
 	<!-- Atlantis JS -->
 	<script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
 
+	<script>
+		window.addEventListener('swal:confirm', event => { 
+			swal({
+				title: event.detail.message,
+				text: event.detail.text,
+				icon: event.detail.type,
+				buttons: true,
+				dangerMode: true,
+			})
+			.then((willDelete) => {
+				if (willDelete) {
+					window.livewire.emit('destroy');
+				}
+			});
+		});
+
+		window.addEventListener('swal:modal', event => { 
+			swal({
+				title: event.detail.message,
+				icon: event.detail.type,
+			});
+		});
+	</script>
+
     @yield('modal')
 	@yield('js-vendor')
 	@yield('js-script')

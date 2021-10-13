@@ -42,6 +42,13 @@
                             <p>Personil</p>
                         </a>
                     </li>
+
+                    <li class="nav-item @if(Request::segment(2) == 'alat') active @endif">
+                        <a href="{{ route('admin.alat') }}">
+                            <i class="fas fa-users"></i>
+                            <p>Kelola Alat</p>
+                        </a>
+                    </li>
                 @endif
                 
                 <li class="nav-item">
