@@ -23,4 +23,9 @@ class AdminController extends Controller
     {
         return view('admin.alat');
     }
+
+    public function kegiatan()
+    {
+        return view('admin.kegiatan');
+    }
 }
