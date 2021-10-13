@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('dashboard',[AdminController::class,'dashboard'])->name('dashboard');
         Route::get('personil',[AdminController::class,'personil'])->name('personil');
         Route::get('alat',[AdminController::class,'alat'])->name('alat');
+        Route::get('alat/{id}',[AdminController::class,'detailAlat'])->name('detail.alat');
         Route::get('kegiatan',[AdminController::class,'kegiatan'])->name('kegiatan');
     });
 

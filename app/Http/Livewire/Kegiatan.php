@@ -26,6 +26,25 @@ class Kegiatan extends Component
         return view('livewire.kegiatan.index',compact('events'));
     }
 
+    public function alertConfirm($id)
+    {
+        $this->selectedID = $id;
+
+        $this->dispatchBrowserEvent('swal:confirm', [
+            'type' => 'warning',  
+            'message' => 'Apakah Kamu Yakin ?', 
+            'text' => 'Jika terhapus, Kamu tidak bisa mengembalikannya lagi'
+        ]);
+    }
+    
+    public function alert($status)
+    {
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',  
+            'message' => 'Data Berhasil '.$status
+        ]);
+    }
+
     public function resetInput()
     {
         $this->namaKegiatan     = null;
@@ -80,28 +99,9 @@ class Kegiatan extends Component
         $this->alert('Diperbaharui');
     }
 
-    public function alertConfirm($id)
-    {
-        $this->selectedID = $id;
-
-        $this->dispatchBrowserEvent('swal:confirm', [
-            'type' => 'warning',  
-            'message' => 'Apakah Kamu Yakin ?', 
-            'text' => 'Jika terhapus, Kamu tidak bisa mengembalikannya lagi'
-        ]);
-    }
-
     public function destroy()
     {
         ModelsKegiatan::destroy($this->selectedID);
         $this->alert('Dihapus');
-    }
-
-    public function alert($status)
-    {
-        $this->dispatchBrowserEvent('swal:modal', [
-            'type' => 'success',  
-            'message' => 'Data Berhasil '.$status
-        ]);
     }
 }

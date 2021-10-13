@@ -28,4 +28,9 @@ class AdminController extends Controller
     {
         return view('admin.kegiatan');
     }
+
+    public function detailAlat($id)
+    {
+        return view('admin.detail-alat',compact('id'));
+    }
 }

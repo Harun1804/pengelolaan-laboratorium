@@ -29,6 +29,25 @@ class Alat extends Component
         return view('livewire.alat.index',compact('tools'));
     }
 
+    public function alertConfirm($id)
+    {
+        $this->selectedID = $id;
+
+        $this->dispatchBrowserEvent('swal:confirm', [
+            'type' => 'warning',  
+            'message' => 'Apakah Kamu Yakin ?', 
+            'text' => 'Jika terhapus, Kamu tidak bisa mengembalikannya lagi'
+        ]);
+    }
+
+    public function alert($status)
+    {
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',  
+            'message' => 'Data Berhasil '.$status
+        ]);
+    }
+
     public function resetInput()
     {
         $this->namaAlat = null;
@@ -56,6 +75,11 @@ class Alat extends Component
         $this->formMode = false;
         $this->resetInput();
         $this->alert('Ditambahkan');
+    }
+
+    public function show($id)
+    {
+        return redirect()->route('admin.detail.alat',$id);
     }
 
     public function edit($id)
@@ -99,17 +123,6 @@ class Alat extends Component
         $this->alert('Diperbaharui');
     }
 
-    public function alertConfirm($id)
-    {
-        $this->selectedID = $id;
-
-        $this->dispatchBrowserEvent('swal:confirm', [
-            'type' => 'warning',  
-            'message' => 'Apakah Kamu Yakin ?', 
-            'text' => 'Jika terhapus, Kamu tidak bisa mengembalikannya lagi'
-        ]);
-    }
-
     public function destroy()
     {
         $alat = ModelsAlat::findOrFail($this->selectedID);
@@ -118,13 +131,5 @@ class Alat extends Component
         unlink($path);
         $alat->delete($this->id);
         $this->alert('Dihapus');
-    }
-
-    public function alert($status)
-    {
-        $this->dispatchBrowserEvent('swal:modal', [
-            'type' => 'success',  
-            'message' => 'Data Berhasil '.$status
-        ]);
     }
 }

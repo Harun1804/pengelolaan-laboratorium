@@ -40,6 +40,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
+                                        <button class="btn btn-sm btn-info" type="button" wire:click="show({{ $alat->id }})">Detail</button>
                                         <button class="btn btn-sm btn-warning" type="button" wire:click="edit({{ $alat->id }})">Edit</button>
                                         <button class="btn btn-sm btn-danger" type="button" wire:click="alertConfirm({{ $alat->id }})">Delete</button>
                                     </td>
