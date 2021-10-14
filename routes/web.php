@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Patologi\ResumeController;
 use App\Http\Controllers\Petugas\PetugasController;
 use App\Http\Controllers\Patologi\PatologiController;
 
@@ -41,20 +42,28 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('patologi')->name('patologi.')->group(function () {
         Route::prefix('kimia')->name('kimia.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
-            Route::get('{jenis}/{id}',[PatologiController::class,'detail'])->name('detail');
+            Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
             Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
         });
 
         Route::prefix('hematologi')->name('hematologi.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
-            Route::get('{jenis}/{id}',[PatologiController::class,'detail'])->name('detail');
+            Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
             Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
         });
 
         Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
-            Route::get('{jenis}/{id}',[PatologiController::class,'detail'])->name('detail');
+            Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
             Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
+        });
+    });
+
+    Route::prefix('resume')->name('resume.')->group(function () {
+        Route::prefix('kimia')->name('kimia.')->group(function () {
+            Route::get('maintenance',[ResumeController::class,'maintenance'])->name('maintenance');
+            Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
+            Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
         });
     });
 });

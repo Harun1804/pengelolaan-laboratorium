@@ -161,6 +161,108 @@
                             </ul>
                         </div>
                     </li>
+
+                    <li class="nav-item @if(Request::segment(1) == 'resume') active @endif">
+                        <a data-toggle="collapse" href="#resume">
+                            <i class="fas fa-bars"></i>
+                            <p>Resume</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="resume">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav4">
+                                        <span class="sub-item">Kimia Klinik</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav4">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="{{ route('resume.kimia.maintenance') }}">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav5">
+                                        <span class="sub-item">Hematologi</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav5">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav6">
+                                        <span class="sub-item">Urinalisis</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav6">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 @endif
             </ul>
         </div>

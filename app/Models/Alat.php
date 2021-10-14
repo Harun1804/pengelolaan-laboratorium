@@ -24,6 +24,6 @@ class Alat extends Model
 
     public function kegiatan()
     {
-        return $this->belongsToMany(Kegiatan::class,'alat_kegiatan','alat_id','kegiatan_id');
+        return $this->belongsToMany(Kegiatan::class,'alat_kegiatan','alat_id','kegiatan_id')->withPivot('personil_id','kegiatan_id','tanggal_cek','keterangan')->withTimestamps();
     }
 }
