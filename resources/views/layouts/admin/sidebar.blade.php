@@ -56,47 +56,112 @@
                             <p>Kelola Kegiatan</p>
                         </a>
                     </li>
-                @endif
-                
-                @if (auth()->user()->role == 'petugas')                    
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#base">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Alat</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="base">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="components/avatars.html">
-                                    <span class="sub-item">Input</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="components/buttons.html">
-                                    <span class="sub-item">Maintenance</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="components/gridsystem.html">
-                                    <span class="sub-item">Penggunaan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="components/panels.html">
-                                    <span class="sub-item">Pemeliharaan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="components/notifications.html">
-                                    <span class="sub-item">Monitoring & Evaluasi</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+
                 @endif
 
+                @if (in_array(auth()->user()->role,['admin','petugas']))
+                    <li class="nav-item @if(Request::segment(1) == 'patologi') active @endif">
+                        <a data-toggle="collapse" href="#submenu">
+                            <i class="fas fa-bars"></i>
+                            <p>Patologi Klinik</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="submenu">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav1">
+                                        <span class="sub-item">Kimia Klinik</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav1">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="{{ route('patologi.kimia.maintenance') }}">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav2">
+                                        <span class="sub-item">Hematologi</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav2">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="{{ route('patologi.hematologi.maintenance') }}">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav3">
+                                        <span class="sub-item">Urinalisis</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav3">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="{{ route('patologi.urinalisis.maintenance') }}">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Petugas\PetugasController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Patologi\PatologiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,25 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('petugas')->name('petugas.')->group(function () {
         Route::get('dashboard',[PetugasController::class,'dashboard'])->name('dashboard');
+    });
+
+    Route::prefix('patologi')->name('patologi.')->group(function () {
+        Route::prefix('kimia')->name('kimia.')->group(function () {
+            Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
+            Route::get('{jenis}/{id}',[PatologiController::class,'detail'])->name('detail');
+            Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
+        });
+
+        Route::prefix('hematologi')->name('hematologi.')->group(function () {
+            Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
+            Route::get('{jenis}/{id}',[PatologiController::class,'detail'])->name('detail');
+            Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
+        });
+
+        Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
+            Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
+            Route::get('{jenis}/{id}',[PatologiController::class,'detail'])->name('detail');
+            Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
+        });
     });
 });
