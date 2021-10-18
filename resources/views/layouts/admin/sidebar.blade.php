@@ -111,7 +111,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.hematologi.penggunaan') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
@@ -141,7 +141,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.urinalisis.penggunaan') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>

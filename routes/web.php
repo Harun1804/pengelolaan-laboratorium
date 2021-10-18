@@ -48,11 +48,13 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('hematologi')->name('hematologi.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
+            Route::get('penggunaan',[PatologiController::class,'index'])->name('penggunaan');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
         });
 
         Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
+            Route::get('penggunaan',[PatologiController::class,'index'])->name('penggunaan');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
         });
     });

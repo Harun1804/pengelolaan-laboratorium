@@ -20,11 +20,7 @@ class PatologiController extends Controller
             $tools = Alat::where('jenis',$filter)->get();
         }
 
-        if ($kategori == "maintenance") {
-            return view('patologi.maintenance',compact(['tools','kategori','filter']));
-        } elseif($kategori == "penggunaan") {
-            return view('patologi.penggunaan',compact(['tools','kategori','filter']));
-        }
+        return view('patologi.index',compact(['tools','kategori','filter']));
     }
 
     public function detail($kategori,$id)

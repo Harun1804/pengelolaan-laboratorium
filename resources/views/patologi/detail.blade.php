@@ -11,8 +11,8 @@
             @case("maintenance")
                 @livewire('input-maintenance', ['id' => $id,'kategori'=>$kategori])
                 @break
-            @case(2)
-                
+            @case("penggunaan")
+                @livewire('input-pengunaan', ['id' => $id,'kategori'=>$kategori])
                 @break
             @default
                 
