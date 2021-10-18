@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PatologiController extends Controller
 {
-    public function maintenance(Request $request)
+    public function index(Request $request)
     {
         $filter = $request->segment(2);
         $kategori = $request->segment(3);
@@ -19,36 +19,16 @@ class PatologiController extends Controller
         }else{
             $tools = Alat::where('jenis',$filter)->get();
         }
-        return view('patologi.maintenance',compact(['tools','kategori','filter']));
+
+        if ($kategori == "maintenance") {
+            return view('patologi.maintenance',compact(['tools','kategori','filter']));
+        } elseif($kategori == "penggunaan") {
+            return view('patologi.penggunaan',compact(['tools','kategori','filter']));
+        }
     }
 
-    public function detail($kategori,$id,Request $request)
+    public function detail($kategori,$id)
     {
-        $filter = $request->segment(2);
-        $alat = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
-        return view('patologi.detail',compact(['alat','id','filter']));
-    }
-
-    public function inputData(Request $request)
-    {
-        $personilID = null;
-        if(auth()->user()->personil != null){
-            $personilID = auth()->user()->personil->id;
-        }
-        
-        foreach($request->kegiatan_id as $kegiatan){
-            $data = [
-                [
-                    'personil_id' => $personilID,
-                    'kegiatan_id' => $kegiatan,
-                    'tanggal_cek' => $request->jadwal
-                ]
-            ];
-
-            $alat = Alat::findOrFail($request->id);
-            $alat->kegiatan()->attach($data);
-        }
-
-        return redirect()->back()->with('success','Data Berhasil Ditambahkan');
+        return view('patologi.detail',compact(['id','kategori']));
     }
 }

@@ -41,21 +41,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('patologi')->name('patologi.')->group(function () {
         Route::prefix('kimia')->name('kimia.')->group(function () {
-            Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
+            Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
+            Route::get('penggunaan',[PatologiController::class,'index'])->name('penggunaan');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
-            Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
         });
 
         Route::prefix('hematologi')->name('hematologi.')->group(function () {
-            Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
+            Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
-            Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
         });
 
         Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
-            Route::get('maintenance',[PatologiController::class,'maintenance'])->name('maintenance');
+            Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
-            Route::post('input-data',[PatologiController::class,'inputData'])->name('inputData');
         });
     });
 
