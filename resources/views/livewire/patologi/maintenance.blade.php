@@ -25,7 +25,7 @@
         <div class="card-body">
             <div class="float-left">
                 <div class="tab-content mb-3" id="pills-tabContent">
-                    <div class="tab-pane fade" wire:ignore.self id="pills-harian-nobd" role="tabpanel"
+                    <div class="tab-pane fade" wire:ignore id="pills-harian-nobd" role="tabpanel"
                         aria-labelledby="pills-harian-tab-nobd">
                         <form method="post" wire:submit.prevent="store">
                             @csrf
@@ -42,8 +42,8 @@
                                 <hr>
                                 @foreach ($alat as $key => $value)
                                     @if ($value->kegiatan->periode == "harian" && $value->kegiatan->kelompok_kegiatan == "pre_on" && $value->kegiatan->kategori == $kategori)
-                                        <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id" value="{{ $value->kegiatan_id }}">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}" wire:key="check-{{ time() }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
                                         </div>
                                         <br>
@@ -56,8 +56,8 @@
                                 <hr>
                                 @foreach ($alat as $key => $value)
                                     @if ($value->kegiatan->periode == "harian" && $value->kegiatan->kelompok_kegiatan == "pre_off" && $value->kegiatan->kategori == $kategori)
-                                        <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id" value="{{ $value->kegiatan_id }}">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
                                         </div>
                                         <br>
@@ -70,9 +70,9 @@
                                 <hr>
                                 @foreach ($alat as $key => $value)
                                     @if ($value->kegiatan->periode == "harian" && $value->kegiatan->kelompok_kegiatan == "pre_run" && $value->kegiatan->kategori == $kategori)
-                                        <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id" value="{{ $value->kegiatan_id }}">
-                                            <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
+                                            <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>                                      
                                         </div>
                                         <br>
                                     @endif
@@ -84,9 +84,9 @@
                                 <hr>
                                 @foreach ($alat as $key => $value)
                                     @if ($value->kegiatan->periode == "harian" && $value->kegiatan->kelompok_kegiatan == "post_run" && $value->kegiatan->kategori == $kategori)
-                                        <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}">
-                                            <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
+                                            <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>                                        
                                         </div>
                                         <br>
                                     @endif
@@ -96,7 +96,7 @@
                             <button class="btn btn-sm btn-primary" type="submit">Tambah</button>
                         </form>
                     </div>
-                    <div class="tab-pane fade" wire:ignore.self id="pills-mingguan-nobd" role="tabpanel"
+                    <div class="tab-pane fade" wire:ignore id="pills-mingguan-nobd" role="tabpanel"
                         aria-labelledby="pills-mingguan-tab-nobd">
                         <form method="post" wire:submit.prevent="store">
                             @csrf
@@ -113,9 +113,9 @@
                                 <hr>
                                 @foreach ($alat as $key => $value)
                                     @if ($value->kegiatan->periode == "mingguan" && $value->kegiatan->kategori == $kategori)
-                                        <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}">
-                                            <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
+                                            <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>                                        
                                         </div>
                                         <br>
                                     @endif
@@ -125,7 +125,7 @@
                             <button class="btn btn-sm btn-primary" type="submit">Tambah</button>
                         </form>
                     </div>
-                    <div class="tab-pane fade" wire:ignore.self id="pills-bulanan-nobd" role="tabpanel"
+                    <div class="tab-pane fade" wire:ignore id="pills-bulanan-nobd" role="tabpanel"
                         aria-labelledby="pills-bulanan-tab-nobd">
                         <form method="post" wire:submit.prevent="store">
                             @csrf
@@ -142,8 +142,8 @@
                                 <hr>
                                 @foreach ($alat as $key => $value)
                                     @if ($value->kegiatan->periode == "bulanan" && $value->kegiatan->kategori == $kategori)
-                                        <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id" value="{{ $value->kegiatan_id }}">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
                                         </div>
                                         <br>

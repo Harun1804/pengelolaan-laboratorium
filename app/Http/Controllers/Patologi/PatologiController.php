@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Patologi;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alat;
-use App\Models\DetailAlat;
 use Illuminate\Http\Request;
 
 class PatologiController extends Controller
