@@ -43,18 +43,24 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('kimia')->name('kimia.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
             Route::get('penggunaan',[PatologiController::class,'index'])->name('penggunaan');
+            Route::get('pemeliharaan',[PatologiController::class,'index'])->name('pemeliharaan');
+            Route::get('monitoring',[PatologiController::class,'index'])->name('monitoring');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
         });
 
         Route::prefix('hematologi')->name('hematologi.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
             Route::get('penggunaan',[PatologiController::class,'index'])->name('penggunaan');
+            Route::get('pemeliharaan',[PatologiController::class,'index'])->name('pemeliharaan');
+            Route::get('monitoring',[PatologiController::class,'index'])->name('monitoring');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
         });
 
         Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
             Route::get('maintenance',[PatologiController::class,'index'])->name('maintenance');
             Route::get('penggunaan',[PatologiController::class,'index'])->name('penggunaan');
+            Route::get('pemeliharaan',[PatologiController::class,'index'])->name('pemeliharaan');
+            Route::get('monitoring',[PatologiController::class,'index'])->name('monitoring');
             Route::get('{kategori}/{id}',[PatologiController::class,'detail'])->name('detail');
         });
     });

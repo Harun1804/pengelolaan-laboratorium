@@ -86,12 +86,12 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.kimia.pemeliharaan') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.kimia.monitoring') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -116,12 +116,12 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.hematologi.pemeliharaan') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.hematologi.monitoring') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -146,12 +146,12 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.urinalisis.pemeliharaan') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('patologi.urinalisis.monitoring') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>

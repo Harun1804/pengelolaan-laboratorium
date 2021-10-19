@@ -14,6 +14,12 @@
             @case("penggunaan")
                 @livewire('input-pengunaan', ['id' => $id,'kategori'=>$kategori])
                 @break
+            @case("pemeliharaan")
+                @livewire('input-pemeliharaan', ['id' => $id,'kategori'=>$kategori])
+                @break
+            @case("monitoring")
+                @livewire('input-monitoring', ['id' => $id,'kategori'=>$kategori])
+                @break
             @default
                 
         @endswitch
