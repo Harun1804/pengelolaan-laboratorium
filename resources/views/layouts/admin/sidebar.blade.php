@@ -4,7 +4,7 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="{{ asset('assets/img/profile.jpg') }}" alt="..." class="avatar-img rounded-circle">
+                    <img src="{{ asset('assets/img/default.png') }}" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -45,14 +45,14 @@
 
                     <li class="nav-item @if(Request::segment(2) == 'alat') active @endif">
                         <a href="{{ route('admin.alat') }}">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-toolbox"></i>
                             <p>Kelola Alat</p>
                         </a>
                     </li>
 
                     <li class="nav-item @if(Request::segment(2) == 'kegiatan') active @endif">
                         <a href="{{ route('admin.kegiatan') }}">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-list-ul"></i>
                             <p>Kelola Kegiatan</p>
                         </a>
                     </li>
@@ -62,7 +62,7 @@
                 @if (in_array(auth()->user()->role,['admin','petugas']))
                     <li class="nav-item @if(Request::segment(1) == 'patologi') active @endif">
                         <a data-toggle="collapse" href="#submenu">
-                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-plus-circle"></i>
                             <p>Patologi Klinik</p>
                             <span class="caret"></span>
                         </a>
@@ -164,7 +164,7 @@
 
                     <li class="nav-item @if(Request::segment(1) == 'resume') active @endif">
                         <a data-toggle="collapse" href="#resume">
-                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-file-alt"></i>
                             <p>Resume</p>
                             <span class="caret"></span>
                         </a>
