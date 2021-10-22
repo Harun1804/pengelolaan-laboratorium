@@ -6,6 +6,7 @@ use App\Models\Alat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\DetailAlat;
+use App\Models\Personil;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class ResumeController extends Controller
@@ -36,7 +37,8 @@ class ResumeController extends Controller
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
-        $pdf = PDF::loadview('laporan.cetak',compact(['filter','tools','kategori']));
+        $personil = Personil::where('jabatan','penanggung jawab')->first();
+        $pdf = PDF::loadview('laporan.cetak',compact(['filter','tools','kategori','personil']));
         return $pdf->setPaper('a4', 'landscape')->download('Laporan '.$kategori.' alat '.$alat->nama_alat.'.pdf');
     }
 }

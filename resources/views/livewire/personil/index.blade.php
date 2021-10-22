@@ -35,7 +35,7 @@
                                     <td>{{ $personil->nama_petugas }}</td>
                                     <td>{{ $personil->user_id }}</td>
                                     <td>{{ $personil->jabatan }}</td>
-                                    <td>{{ $personil->tanggal_cek }}</td>
+                                    <td>{{ $personil->created_at->diffForHumans() }}</td>
                                 </tr>
                             @empty
                                 <tr>

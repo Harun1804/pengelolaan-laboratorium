@@ -18,7 +18,7 @@ class Personil extends Component
 
     public function render()
     {
-        $personils = ModelPersonil::join('alat_kegiatan','personil.id','alat_kegiatan.personil_id')->get();
+        $personils = ModelPersonil::get();
         return view('livewire.personil.index',compact('personils'));
     }
 

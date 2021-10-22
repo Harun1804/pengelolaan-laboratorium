@@ -20,6 +20,18 @@
         .check-area {
             text-align: center
         }
+        .ujung-kanan {
+            position: relative;
+            left: 80%;
+            width: 200px;
+        }
+        #namaPetugas {
+            border-bottom: 1px solid black;
+            padding-bottom: 15px;
+        }
+        #nip {
+            border-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -120,6 +132,16 @@
                 @endif
             @endforeach
         </table>
+
+        <div class="ujung-kanan">
+            <br>
+            <br>
+            <h6>{{ ucfirst($personil->jabatan) }} Patologi Klinik</h6>
+            <br>
+            <br>
+            <h6 id="namaPetugas">{{ $personil->nama_petugas }}</h6>
+            <h6 id="nip">{{ $personil->nip }}</h6>
+        </div>
     </div>
 </body>
 </html>
