@@ -17,6 +17,7 @@ class CreatePersonilTable extends Migration
             $table->id();
             $table->string('nama_petugas',50);
             $table->string('jabatan',50)->nullable();
+            $table->string('nip',50)->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });

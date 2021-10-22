@@ -14,6 +14,7 @@ class Personil extends Model
     protected $fillable = [
         'nama_petugas',
         'jabatan',
+        'nip',
         'user_id'
     ];
 
