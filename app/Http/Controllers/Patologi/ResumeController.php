@@ -36,7 +36,7 @@ class ResumeController extends Controller
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
-        $pdf = PDF::loadview('laporan.cetak',compact(['filter','tools']));
+        $pdf = PDF::loadview('laporan.cetak',compact(['filter','tools','kategori']));
         return $pdf->setPaper('a4', 'landscape')->download('Laporan '.$kategori.' alat '.$alat->nama_alat.'.pdf');
     }
 }
