@@ -66,8 +66,30 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::prefix('resume')->name('resume.')->group(function () {
+
         Route::prefix('kimia')->name('kimia.')->group(function () {
-            Route::get('maintenance',[ResumeController::class,'maintenance'])->name('maintenance');
+            Route::get('maintenance',[ResumeController::class,'daftarAlat'])->name('maintenance');
+            Route::get('penggunaan',[ResumeController::class,'daftarAlat'])->name('penggunaan');
+            Route::get('pemeliharaan',[ResumeController::class,'daftarAlat'])->name('pemeliharaan');
+            Route::get('monitoring',[ResumeController::class,'daftarAlat'])->name('monitoring');
+            Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
+            Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
+        });
+        
+        Route::prefix('hematologi')->name('hematologi.')->group(function () {
+            Route::get('maintenance',[ResumeController::class,'daftarAlat'])->name('maintenance');
+            Route::get('penggunaan',[ResumeController::class,'daftarAlat'])->name('penggunaan');
+            Route::get('pemeliharaan',[ResumeController::class,'daftarAlat'])->name('pemeliharaan');
+            Route::get('monitoring',[ResumeController::class,'daftarAlat'])->name('monitoring');
+            Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
+            Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
+        });
+        
+        Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
+            Route::get('maintenance',[ResumeController::class,'daftarAlat'])->name('maintenance');
+            Route::get('penggunaan',[ResumeController::class,'daftarAlat'])->name('penggunaan');
+            Route::get('pemeliharaan',[ResumeController::class,'daftarAlat'])->name('pemeliharaan');
+            Route::get('monitoring',[ResumeController::class,'daftarAlat'])->name('monitoring');
             Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
             Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
         });

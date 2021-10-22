@@ -183,17 +183,17 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.kimia.penggunaan') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.kimia.pemeliharaan') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.kimia.monitoring') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -208,22 +208,22 @@
                                     <div class="collapse" id="subnav5">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.hematologi.maintenance') }}">
                                                     <span class="sub-item">Maintenance</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.hematologi.penggunaan') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.hematologi.pemeliharaan') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.hematologi.monitoring') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -238,22 +238,22 @@
                                     <div class="collapse" id="subnav6">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.urinalisis.maintenance') }}">
                                                     <span class="sub-item">Maintenance</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.urinalisis.penggunaan') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.urinalisis.pemeliharaan') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.urinalisis.monitoring') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>

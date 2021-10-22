@@ -14,9 +14,6 @@
                         <div class="col-7">
                             <h3>Logbook Maintenance {{ $tools[0]->alat->nama_alat }}</h3>
                         </div>
-                        <div class="col-1">
-                            <a href="#" class="btn btn-sm btn-primary" target="_blank">Cetak</a>
-                        </div>
                     </div>
                 </div>
                 <hr>
@@ -47,15 +44,17 @@
                             @if ($alat->kegiatan->periode == "harian")                              
                                 <tr>
                                     <td>{{ $alat->kegiatan->nama_kegiatan }}</td>
-                                    @foreach ($alat->kegiatan->alat as $ka)
-                                        @for ($i = 1; $i <= 31; $i++)
-                                            @if (\Carbon\Carbon::parse($ka->pivot->tanggal_cek)->day == $i)
-                                                <td>✔</td>
-                                            @else
-                                                <td></td>
-                                            @endif
-                                        @endfor
-                                    @endforeach
+                                    @for ($i = 1; $i <= 31; $i++)
+                                        <td>
+                                            @foreach ($alat->kegiatan->alat as $ka)
+                                                @if (\Carbon\Carbon::parse($ka->pivot->tanggal_cek)->day == $i)
+                                                    ✔
+                                                @else
+                                                    
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                    @endfor
                                 </tr>
                             @endif
                         @endforeach
@@ -73,15 +72,17 @@
                             @if ($alat->kegiatan->periode == "mingguan")                                
                                 <tr>
                                     <td>{{ $alat->kegiatan->nama_kegiatan }}</td>
-                                    @foreach ($alat->kegiatan->alat as $ka)
-                                        @for ($i = 1; $i <= 31; $i++)
-                                            @if (\Carbon\Carbon::parse($ka->pivot->tanggal_cek)->day == $i)
-                                                <td>✔</td>
-                                            @else
-                                                <td></td>
-                                            @endif
-                                        @endfor
-                                    @endforeach
+                                    @for ($i = 1; $i <= 31; $i++)
+                                        <td>
+                                            @foreach ($alat->kegiatan->alat as $ka)
+                                                @if (\Carbon\Carbon::parse($ka->pivot->tanggal_cek)->day == $i)
+                                                    ✔
+                                                @else
+                                                    
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                    @endfor
                                 </tr>
                             @endif
                         @endforeach
@@ -99,15 +100,17 @@
                             @if ($alat->kegiatan->periode == "bulanan")                                
                                 <tr>
                                     <td>{{ $alat->kegiatan->nama_kegiatan }}</td>
-                                    @foreach ($alat->kegiatan->alat as $ka)
-                                        @for ($i = 1; $i <= 31; $i++)
-                                            @if (\Carbon\Carbon::parse($ka->pivot->tanggal_cek)->day == $i)
-                                                <td>✔</td>
-                                            @else
-                                                <td></td>
-                                            @endif
-                                        @endfor
-                                    @endforeach
+                                    @for ($i = 1; $i <= 31; $i++)
+                                        <td>
+                                            @foreach ($alat->kegiatan->alat as $ka)
+                                                @if (\Carbon\Carbon::parse($ka->pivot->tanggal_cek)->day == $i)
+                                                    ✔
+                                                @else
+                                                    
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                    @endfor
                                 </tr>
                             @endif
                         @endforeach
