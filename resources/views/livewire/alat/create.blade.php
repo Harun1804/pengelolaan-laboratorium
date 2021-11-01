@@ -57,8 +57,8 @@
                                     <label class="custom-control-label" for="customRadio2">Hematologi</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="urinalis" wire:model="jenis">
-                                    <label class="custom-control-label" for="customRadio3">Urinalis</label>
+                                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="urinalisis" wire:model="jenis">
+                                    <label class="custom-control-label" for="customRadio3">Urinalisis</label>
                                 </div>
                             </div>
                         </div>
