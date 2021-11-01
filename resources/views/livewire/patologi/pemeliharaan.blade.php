@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div class="float-right">
-                <img src="{{ asset($alat[0]->alat->gambar) }}" alt="Gambar Alat" width="250">
+                //<img src="{{ asset($alat[0]->alat->gambar) }}" alt="Gambar Alat" width="250">
             </div>
         </div>
     </div>
