@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Livewire;
-
 use App\Models\Alat;
 use Livewire\Component;
 use App\Models\DetailAlat;
