@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="container">
-        <h3 style="text-align: center">Logbook {{ ucfirst($kategori) }} {{ $tools[0]->alat->nama_alat }}</h3>
+        <h3 style="text-align: center">Logbook Maintenance {{ $tools[0]->alat->nama_alat }}</h3>
         <hr>
         <table>
             <tr>
@@ -60,7 +60,7 @@
                 @endfor
             </tr>
             @foreach ($tools as $alat)
-                @if ($alat->kegiatan->periode == "harian")                              
+                @if ($alat->periode == "harian")                              
                     <tr>
                         <td class="tdata">{{ $alat->kegiatan->nama_kegiatan }}</td>
                         @for ($i = 1; $i <= 31; $i++)
@@ -87,7 +87,7 @@
                 @endfor
             </tr>
             @foreach ($tools as $alat)
-                @if ($alat->kegiatan->periode == "mingguan")                              
+                @if ($alat->periode == "mingguan")                              
                     <tr>
                         <td class="tdata">{{ $alat->kegiatan->nama_kegiatan }}</td>
                         @for ($i = 1; $i <= 31; $i++)
@@ -114,7 +114,7 @@
                 @endfor
             </tr>
             @foreach ($tools as $alat)
-                @if ($alat->kegiatan->periode == "bulanan")                              
+                @if ($alat->periode == "bulanan")                              
                     <tr>
                         <td class="tdata">{{ $alat->kegiatan->nama_kegiatan }}</td>
                         @for ($i = 1; $i <= 31; $i++)
@@ -136,11 +136,11 @@
         <div class="ujung-kanan">
             <br>
             <br>
-            <h6>{{ ucfirst($personil->jabatan) }} Patologi Klinik</h6>
+            <h6>Penanggung Jawab Patologi Klinik</h6>
             <br>
             <br>
-            <h6 id="namaPetugas">{{ $personil->nama_petugas }}</h6>
-            <h6 id="nip">{{ $personil->nip }}</h6>
+            <h6 id="namaPetugas">dr.C.N.C Alamanda, Sp.PK</h6>
+            <h6 id="nip">NIP.19740906 201412 2 001</h6>
         </div>
     </div>
 </body>

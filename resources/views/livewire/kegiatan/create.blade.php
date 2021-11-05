@@ -21,32 +21,6 @@
 
                         <div class="col-md-12">
                             <div class="form-check">
-                                <label>Kelompok Kegiatan</label>
-                                <br>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="kelompokKegiatan1" name="kelompokKegiatan" class="custom-control-input" value="pre_on" wire:model="kelompokKegiatan">
-                                    <label class="custom-control-label" for="kelompokKegiatan1">Pre On</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="kelompokKegiatan2" name="kelompokKegiatan" class="custom-control-input" value="pre_off" wire:model="kelompokKegiatan">
-                                    <label class="custom-control-label" for="kelompokKegiatan2">Pre Off</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="kelompokKegiatan3" name="kelompokKegiatan" class="custom-control-input" value="pre_run" wire:model="kelompokKegiatan">
-                                    <label class="custom-control-label" for="kelompokKegiatan3">Pre Run</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="kelompokKegiatan4" name="kelompokKegiatan" class="custom-control-input" value="post_run" wire:model="kelompokKegiatan">
-                                    <label class="custom-control-label" for="kelompokKegiatan4">Pre Run</label>
-                                </div>
-                                @error('kelompokKegiatan')
-                                    <small id="kelompokKegiatan" class="form-text text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-check">
                                 <label>Kategori</label>
                                 <br>
                                 <div class="custom-control custom-radio">
@@ -67,28 +41,6 @@
                                 </div>
                                 @error('kategori')
                                     <small id="kategori" class="form-text text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-check">
-                                <label>Periode</label>
-                                <br>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="periode1" name="periode" class="custom-control-input" value="harian" wire:model="periode">
-                                    <label class="custom-control-label" for="periode1">Harian</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="periode2" name="periode" class="custom-control-input" value="mingguan" wire:model="periode">
-                                    <label class="custom-control-label" for="periode2">Mingguan</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="periode3" name="periode" class="custom-control-input" value="bulanan" wire:model="periode">
-                                    <label class="custom-control-label" for="periode3">Bulanan</label>
-                                </div>
-                                @error('periode')
-                                    <small id="periode" class="form-text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                         </div>

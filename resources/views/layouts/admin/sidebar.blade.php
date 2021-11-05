@@ -178,22 +178,22 @@
                                     <div class="collapse" id="subnav4">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
-                                                <a href="{{ route('resume.kimia.maintenance') }}">
+                                                <a href="{{ route('resume.kimia.maintenance.index') }}">
                                                     <span class="sub-item">Maintenance</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.kimia.penggunaan') }}">
+                                                <a href="{{ route('resume.kimia.penggunaan.index') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.kimia.pemeliharaan') }}">
+                                                <a href="{{ route('resume.kimia.pemeliharaan.index') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.kimia.monitoring') }}">
+                                                <a href="#">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -208,22 +208,22 @@
                                     <div class="collapse" id="subnav5">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
-                                                <a href="{{ route('resume.hematologi.maintenance') }}">
+                                                <a href="{{ route('resume.hematologi.maintenance.index') }}">
                                                     <span class="sub-item">Maintenance</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.hematologi.penggunaan') }}">
+                                                <a href="{{ route('resume.hematologi.penggunaan.index') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.hematologi.pemeliharaan') }}">
+                                                <a href="{{ route('resume.hematologi.pemeliharaan.index') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.hematologi.monitoring') }}">
+                                                <a href="{{ route('resume.hematologi.monitoring.index') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -238,22 +238,22 @@
                                     <div class="collapse" id="subnav6">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
-                                                <a href="{{ route('resume.urinalisis.maintenance') }}">
+                                                <a href="{{ route('resume.urinalisis.maintenance.index') }}">
                                                     <span class="sub-item">Maintenance</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.urinalisis.penggunaan') }}">
+                                                <a href="{{ route('resume.urinalisis.penggunaan.index') }}">
                                                     <span class="sub-item">Penggunaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.urinalisis.pemeliharaan') }}">
+                                                <a href="{{ route('resume.urinalisis.pemeliharaan.index') }}">
                                                     <span class="sub-item">Pemeliharaan Alat</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('resume.urinalisis.monitoring') }}">
+                                                <a href="#">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>

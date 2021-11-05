@@ -8,10 +8,13 @@ use App\Models\DetailAlat as ModelsDetailAlat;
 
 class DetailAlat extends Component
 {
-    public $kegiatanID,$selectedID,$alatID,$events;
+    public $kegiatanID,$selectedID,$alatID,$events,$kelompokKegiatan,$periode;
+    public $editMode = false;
 
     protected $rules = [
-        'kegiatanID' => 'required'
+        'kegiatanID' => 'required',
+        'kelompokKegiatan'  => 'required',
+        'periode'           => 'required'
     ];
 
     protected $listeners = ['destroy'];
@@ -49,18 +52,51 @@ class DetailAlat extends Component
 
     public function resetInput()
     {
-        $this->kegiatanID = null;
+        $this->kegiatanID       = null;
+        $this->kelompokKegiatan = null;
+        $this->periode          = null;
+    }
+
+    public function create()
+    {
+        $this->resetInput();
+        $this->editMode = false;
     }
 
     public function store()
     {
         ModelsDetailAlat::create([
-            'alat_id' => $this->alatID,
-            'kegiatan_id' => $this->kegiatanID
+            'alat_id'           => $this->alatID,
+            'kegiatan_id'       => $this->kegiatanID,
+            'kelompok_kegiatan' => $this->kelompokKegiatan,
+            'periode'           => $this->periode,
         ]);
 
         $this->resetInput();
         $this->alert('Ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $event = ModelsDetailAlat::findOrFail($id);
+        $this->selectedID = $event->id;
+        $this->kegiatanID = $event->kegiatan_id;
+        $this->kelompokKegiatan = $event->kelompok_kegiatan;
+        $this->periode = $event->periode;
+        $this->editMode = true;
+    }
+
+    public function update()
+    {
+        $event = ModelsDetailAlat::findOrFail($this->selectedID);
+        $event->update([
+            'kegiatan_id'       => $this->kegiatanID,
+            'kelompok_kegiatan' => $this->kelompokKegiatan,
+            'periode'           => $this->periode,
+        ]);
+
+        $this->editMode = false;
+        $this->alert('Diubah');
     }
 
     public function destroy()

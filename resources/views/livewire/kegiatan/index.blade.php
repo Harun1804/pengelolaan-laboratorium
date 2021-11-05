@@ -30,9 +30,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Action</th>
                                 <th scope="col">Nama Kegiatan</th>
-                                <th scope="col">Kelompok Kegiatan</th>
                                 <th scope="col">Kategori</th>
-                                <th scope="col">Periode</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,9 +42,7 @@
                                         <button class="btn btn-sm btn-danger" type="button" wire:click="alertConfirm({{ $kegiatan->id }})">Delete</button>
                                     </td>
                                     <td>{{ $kegiatan->nama_kegiatan }}</td>
-                                    <td>{{ $kegiatan->kelompok_kegiatan }}</td>
                                     <td>{{ $kegiatan->kategori }}</td>
-                                    <td>{{ $kegiatan->periode }}</td>
                                 </tr>
                             @empty
                                 <tr>

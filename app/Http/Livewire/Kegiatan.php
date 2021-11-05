@@ -7,15 +7,13 @@ use Livewire\Component;
 
 class Kegiatan extends Component
 {
-    public $namaKegiatan,$kelompokKegiatan,$kategori,$periode,$selectedID;
+    public $namaKegiatan,$kategori,$selectedID;
     public $formMode = false;
     public $editMode = false;
 
     protected $rules = [
         'namaKegiatan'      => 'required',
-        'kelompokKegiatan'  => 'required',
-        'kategori'          => 'required',
-        'periode'           => 'required'
+        'kategori'          => 'required'
     ];
 
     protected $listeners = ['destroy'];
@@ -48,9 +46,7 @@ class Kegiatan extends Component
     public function resetInput()
     {
         $this->namaKegiatan     = null;
-        $this->kelompokKegiatan = null;
         $this->kategori         = null;
-        $this->periode          = null;
     }
 
     public function create()
@@ -62,9 +58,7 @@ class Kegiatan extends Component
     {
         ModelsKegiatan::create([
             'nama_kegiatan'     => $this->namaKegiatan,
-            'kelompok_kegiatan' => $this->kelompokKegiatan,
-            'kategori'          => $this->kategori,
-            'periode'           => $this->periode,
+            'kategori'          => $this->kategori
         ]);
 
         $this->resetInput();
@@ -89,9 +83,7 @@ class Kegiatan extends Component
         $kegiatan = ModelsKegiatan::findOrFail($this->selectedID);
         $kegiatan->update([
             'nama_kegiatan'     => $this->namaKegiatan,
-            'kelompok_kegiatan' => $this->kelompokKegiatan,
             'kategori'          => $this->kategori,
-            'periode'           => $this->periode,
         ]);
         $this->resetInput();
         $this->editMode = false;

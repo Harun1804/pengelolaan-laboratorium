@@ -12,10 +12,12 @@
                     <div class="row">
                         <div class="col-4"></div>
                         <div class="col-7">
-                            <h3>Logbook {{ ucfirst($kategori) }} {{ $tools[0]->alat->nama_alat }}</h3>
+                            @if ($tools != null)
+                                <h3>Logbook Maintenance {{ $tools[0]->alat->nama_alat }}</h3>
+                            @endif
                         </div>
                         <div class="col-1">
-                            <a href="{{ route('resume.'.$filter.'.cetak',[$kategori,$id]) }}" class="btn btn-sm btn-primary" target="_blank">Cetak</a>
+                            <a href="{{ route('resume.'.$filter.'.maintenance.cetak',$id) }}" class="btn btn-sm btn-primary" target="_blank">Cetak</a>
                         </div>
                     </div>
                 </div>
@@ -23,12 +25,12 @@
                 <table>
                     <tr>
                         <td>Nama Alat</td>
-                        <td>:</td>
+                        <td> : </td>
                         <td>{{ $tools[0]->alat->nama_alat }}</td>
                     </tr>
                     <tr>
                         <td>Bulan</td>
-                        <td>:</td>
+                        <td> : </td>
                         <td>{{ \Carbon\Carbon::now()->monthName }}</td>
                     </tr>
                 </table>
@@ -44,7 +46,7 @@
                             @endfor
                         </tr>
                         @foreach ($tools as $alat)
-                            @if ($alat->kegiatan->periode == "harian")                              
+                            @if ($alat->periode == "harian")                              
                                 <tr>
                                     <td>{{ $alat->kegiatan->nama_kegiatan }}</td>
                                     @for ($i = 1; $i <= 31; $i++)
@@ -72,7 +74,7 @@
                             @endfor
                         </tr>
                         @foreach ($tools as $alat)
-                            @if ($alat->kegiatan->periode == "mingguan")                                
+                            @if ($alat->periode == "mingguan")                                
                                 <tr>
                                     <td>{{ $alat->kegiatan->nama_kegiatan }}</td>
                                     @for ($i = 1; $i <= 31; $i++)
@@ -100,7 +102,7 @@
                             @endfor
                         </tr>
                         @foreach ($tools as $alat)
-                            @if ($alat->kegiatan->periode == "bulanan")                                
+                            @if ($alat->periode == "bulanan")                                
                                 <tr>
                                     <td>{{ $alat->kegiatan->nama_kegiatan }}</td>
                                     @for ($i = 1; $i <= 31; $i++)

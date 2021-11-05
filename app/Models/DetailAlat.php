@@ -14,7 +14,9 @@ class DetailAlat extends Model
     protected $table = 'detail_alat';
     protected $fillable = [
         'alat_id',
-        'kegiatan_id'
+        'kegiatan_id',
+        'kelompok_kegiatan',
+        'periode'
     ];
 
     public function alat()

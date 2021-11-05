@@ -68,30 +68,64 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('resume')->name('resume.')->group(function () {
 
         Route::prefix('kimia')->name('kimia.')->group(function () {
-            Route::get('maintenance',[ResumeController::class,'daftarAlat'])->name('maintenance');
-            Route::get('penggunaan',[ResumeController::class,'daftarAlat'])->name('penggunaan');
-            Route::get('pemeliharaan',[ResumeController::class,'daftarAlat'])->name('pemeliharaan');
-            Route::get('monitoring',[ResumeController::class,'daftarAlat'])->name('monitoring');
-            Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
-            Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
+            Route::prefix('maintenance')->name('maintenance.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewMaintenance'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakMaintenance'])->name('cetak');
+            });
+            Route::prefix('penggunaan')->name('penggunaan.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewPenggunaan'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakPenggunaan'])->name('cetak');
+            });
+            Route::prefix('pemeliharaan')->name('pemeliharaan.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewPemeliharaan'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakPemeliharaan'])->name('cetak');
+            });            
+
         });
         
         Route::prefix('hematologi')->name('hematologi.')->group(function () {
-            Route::get('maintenance',[ResumeController::class,'daftarAlat'])->name('maintenance');
-            Route::get('penggunaan',[ResumeController::class,'daftarAlat'])->name('penggunaan');
-            Route::get('pemeliharaan',[ResumeController::class,'daftarAlat'])->name('pemeliharaan');
-            Route::get('monitoring',[ResumeController::class,'daftarAlat'])->name('monitoring');
-            Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
-            Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
+            Route::prefix('maintenance')->name('maintenance.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewMaintenance'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakMaintenance'])->name('cetak');
+            });
+            Route::prefix('penggunaan')->name('penggunaan.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewPenggunaan'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakPenggunaan'])->name('cetak');
+            });
+            Route::prefix('pemeliharaan')->name('pemeliharaan.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewPemeliharaan'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakPemeliharaan'])->name('cetak');
+            });
+            Route::prefix('monitoring')->name('monitoring.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewMonitor'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakMonitor'])->name('cetak');
+            });
         });
         
         Route::prefix('urinalisis')->name('urinalisis.')->group(function () {
-            Route::get('maintenance',[ResumeController::class,'daftarAlat'])->name('maintenance');
-            Route::get('penggunaan',[ResumeController::class,'daftarAlat'])->name('penggunaan');
-            Route::get('pemeliharaan',[ResumeController::class,'daftarAlat'])->name('pemeliharaan');
-            Route::get('monitoring',[ResumeController::class,'daftarAlat'])->name('monitoring');
-            Route::get('{kategori}/{id}',[ResumeController::class,'review'])->name('review');
-            Route::get('{kategori}/{id}/cetak',[ResumeController::class,'cetak'])->name('cetak');
+            Route::prefix('maintenance')->name('maintenance.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewMaintenance'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakMaintenance'])->name('cetak');
+            });
+            Route::prefix('penggunaan')->name('penggunaan.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewPenggunaan'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakPenggunaan'])->name('cetak');
+            });
+            Route::prefix('pemeliharaan')->name('pemeliharaan.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewPemeliharaan'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakPemeliharaan'])->name('cetak');
+            });
+
         });
     });
 });

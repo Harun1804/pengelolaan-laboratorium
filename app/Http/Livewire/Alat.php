@@ -98,7 +98,7 @@ class Alat extends Component
     public function update()
     {
         $alat = ModelsAlat::findOrFail($this->selectedID);
-        if ($this->gambar == $alat->gambar) {
+        if ($this->gambar == null) {
             $alat->update([
                 'nama_alat' => $this->namaAlat,
                 'serial_number' => $this->serialNumber,
