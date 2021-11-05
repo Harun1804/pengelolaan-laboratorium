@@ -42,7 +42,9 @@
                                     <td>
                                         <button class="btn btn-sm btn-info" type="button" wire:click="show({{ $alat->id }})">Detail</button>
                                         <button class="btn btn-sm btn-warning" type="button" wire:click="edit({{ $alat->id }})">Edit</button>
+                                        @if ($alat->detailAlat->count() == 0)
                                         <button class="btn btn-sm btn-danger" type="button" wire:click="alertConfirm({{ $alat->id }})">Delete</button>
+                                        @endif
                                     </td>
                                     <td>{{ $alat->nama_alat }}</td>
                                     <td>
