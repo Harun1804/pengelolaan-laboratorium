@@ -193,7 +193,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.kimia.monitoring.index') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
@@ -253,7 +253,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{ route('resume.urinalisis.monitoring.index') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>

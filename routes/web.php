@@ -83,7 +83,11 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('{id}',[ResumeController::class,'reviewPemeliharaan'])->name('review');
                 Route::get('{id}/cetak',[ResumeController::class,'cetakPemeliharaan'])->name('cetak');
             });            
-
+            Route::prefix('monitoring')->name('monitoring.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewMonitor'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakMonitor'])->name('cetak');
+            });
         });
         
         Route::prefix('hematologi')->name('hematologi.')->group(function () {
@@ -125,7 +129,11 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('{id}',[ResumeController::class,'reviewPemeliharaan'])->name('review');
                 Route::get('{id}/cetak',[ResumeController::class,'cetakPemeliharaan'])->name('cetak');
             });
-
+            Route::prefix('monitoring')->name('monitoring.')->group(function () {
+                Route::get('/',[ResumeController::class,'daftarAlat'])->name('index');
+                Route::get('{id}',[ResumeController::class,'reviewMonitor'])->name('review');
+                Route::get('{id}/cetak',[ResumeController::class,'cetakMonitor'])->name('cetak');
+            });
         });
     });
 });
