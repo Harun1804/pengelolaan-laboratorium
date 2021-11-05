@@ -1,5 +1,4 @@
-<?php
-namespace App\Http\Livewire;
+<?php namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Personil as ModelPersonil;

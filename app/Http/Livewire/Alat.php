@@ -1,5 +1,4 @@
-<?php
-namespace App\Http\Livewire;
+<?php namespace App\Http\Livewire;
 
 use App\Models\Alat as ModelsAlat;
 use Livewire\Component;

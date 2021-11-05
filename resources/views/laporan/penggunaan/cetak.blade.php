@@ -42,7 +42,7 @@
             <tr>
                 <td>Nama Petugas</td>
                 <td> : </td>
-                <td>{{ $petugas->nama_petugas }}</td>
+                <td>{{ ($petugas != null) ? $petugas->nama_petugas : '' }}</td>
             </tr>
             <tr>
                 <td>Nama Alat</td>

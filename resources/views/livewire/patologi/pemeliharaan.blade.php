@@ -22,13 +22,11 @@
                         <label>Jenis Perawatan</label>
                         <hr>
                         @foreach ($alat as $key => $value)
-                            @if ($value->kegiatan->kategori == $kategori)
                                 <div class="custom-control custom-checkbox" wire:key="{{ $key }}">
                                     <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id" value="{{ $value->kegiatan_id }}">
                                     <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
                                 </div>
                                 <br>
-                            @endif
                         @endforeach
                     </div>
 

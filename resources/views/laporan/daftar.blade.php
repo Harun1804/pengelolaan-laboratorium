@@ -20,13 +20,13 @@
                         @case('maintenance')
                             <a href="{{ route('resume.'.$filter.'.maintenance.review',$alat->id) }}" class="btn btn-sm btn-secondary">Logbook</a>
                             @break
-                        @case('penggunaan alat')
+                        @case('penggunaan')
                             <a href="{{ route('resume.'.$filter.'.penggunaan.review',$alat->id) }}" class="btn btn-sm btn-secondary">Logbook</a>
                             @break
                         @case('pemeliharaan')
                             <a href="{{ route('resume.'.$filter.'.pemeliharaan.review',$alat->id) }}" class="btn btn-sm btn-secondary">Logbook</a>
                             @break
-                        @case('monitoring dan evaluasi')
+                        @case('monitoring')
                             <a href="{{ route('resume.'.$filter.'.monitoring.review',$alat->id) }}" class="btn btn-sm btn-secondary">Logbook</a>
                             @break
                     @endswitch

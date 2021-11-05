@@ -21,14 +21,6 @@ class ResumeController extends Controller
         }else{
             $tools = Alat::where('jenis',$filter)->get();
         }
-        switch ($kategori) {
-            case 'penggunaan':
-                $kategori = "penggunaan alat";
-                break;
-            case 'monitoring':
-                $kategori = "monitoring dan evaluasi";
-                break;
-        }
         return view('laporan.daftar',compact(['tools','kategori','filter']));
     }
 
@@ -45,7 +37,10 @@ class ResumeController extends Controller
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $personil = $tools[0]->alat->kegiatan[0]->pivot->personil_id;
-        $petugas = Personil::findOrFail($personil);
+        $petugas = null;
+        if ($personil != null) {
+            $petugas = Personil::findOrFail($personil);
+        }
 
         return view('laporan.penggunaan.review',compact(['filter','tools','id','petugas']));
     }
@@ -63,7 +58,11 @@ class ResumeController extends Controller
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $personil = $tools[0]->alat->kegiatan[0]->pivot->personil_id;
-        $petugas = Personil::findOrFail($personil);
+        $petugas = null;
+        if ($personil != null) {
+            $petugas = Personil::findOrFail($personil);
+        }
+
         return view('laporan.monitoring.review',compact(['filter','tools','id','petugas']));
     }
 
@@ -82,7 +81,10 @@ class ResumeController extends Controller
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
         $personil = $tools[0]->alat->kegiatan[0]->pivot->personil_id;
-        $petugas = Personil::findOrFail($personil);
+        $petugas = null;
+        if ($personil != null) {
+            $petugas = Personil::findOrFail($personil);
+        }
         $pdf = PDF::loadview('laporan.penggunaan.cetak',compact(['filter','tools','petugas']));
         return $pdf->setPaper('a4', 'landscape')->download('Laporan Penggunaan Alat '.$alat->nama_alat.'.pdf');
     }
@@ -102,7 +104,10 @@ class ResumeController extends Controller
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
         $personil = $tools[0]->alat->kegiatan[0]->pivot->personil_id;
-        $petugas = Personil::findOrFail($personil);
+        $petugas = null;
+        if ($personil != null) {
+            $petugas = Personil::findOrFail($personil);
+        }
         $pdf = PDF::loadview('laporan.monitoring.cetak',compact(['filter','tools','petugas']));
         return $pdf->setPaper('a4', 'landscape')->download('Laporan Monitoring dan Evaluasi Alat '.$alat->nama_alat.'.pdf');
     }

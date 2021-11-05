@@ -41,7 +41,7 @@
                                 <label>Pre On</label>
                                 <hr>
                                 @foreach ($alat as $key => $value)
-                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "pre_on" && $value->kegiatan->kategori == $kategori)
+                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "pre_on")
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}" wire:key="check-{{ time() }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
@@ -55,7 +55,7 @@
                                 <label>Pre Off</label>
                                 <hr>
                                 @foreach ($alat as $key => $value)
-                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "pre_off" && $value->kegiatan->kategori == $kategori)
+                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "pre_off")
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>
@@ -69,7 +69,7 @@
                                 <label>Pre Run</label>
                                 <hr>
                                 @foreach ($alat as $key => $value)
-                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "pre_run" && $value->kegiatan->kategori == $kategori)
+                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "pre_run")
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>                                      
@@ -83,7 +83,7 @@
                                 <label>Post Run</label>
                                 <hr>
                                 @foreach ($alat as $key => $value)
-                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "post_run" && $value->kegiatan->kategori == $kategori)
+                                    @if ($value->periode == "harian" && $value->kelompok_kegiatan == "post_run")
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>                                        
@@ -112,7 +112,7 @@
                                 <label>Jenis Perawatan</label>
                                 <hr>
                                 @foreach ($alat as $key => $value)
-                                    @if ($value->kegiatan->periode == "mingguan" && $value->kegiatan->kategori == $kategori)
+                                    @if ($value->periode == "mingguan")
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>                                        
@@ -141,7 +141,7 @@
                                 <label>Jenis Perawatan</label>
                                 <hr>
                                 @foreach ($alat as $key => $value)
-                                    @if ($value->kegiatan->periode == "bulanan" && $value->kegiatan->kategori == $kategori)
+                                    @if ($value->periode == "bulanan")
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck{{ $key }}" wire:model="kegiatan_id.{{ $key }}" value="{{ $value->kegiatan_id }}" name="kegiatan_id.{{ $key }}">
                                             <label class="custom-control-label" for="customCheck{{ $key }}">{{ $value->kegiatan->nama_kegiatan }}</label>

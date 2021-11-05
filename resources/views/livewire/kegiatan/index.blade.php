@@ -39,7 +39,9 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
                                         <button class="btn btn-sm btn-warning" type="button" wire:click="edit({{ $kegiatan->id }})">Edit</button>
+                                        @if ($kegiatan->detailAlat == null || $kegiatan->detailAlat->count() == 0)
                                         <button class="btn btn-sm btn-danger" type="button" wire:click="alertConfirm({{ $kegiatan->id }})">Delete</button>
+                                        @endif
                                     </td>
                                     <td>{{ $kegiatan->nama_kegiatan }}</td>
                                     <td>{{ $kegiatan->kategori }}</td>
