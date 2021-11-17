@@ -28,8 +28,12 @@ class ResumeController extends Controller
     {
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
+        if($tools[0]->alat->nama_alat == 'vidas'){
+            return view('laporan.vidas.review',compact(['filter','tools','id']));
+        }else{
+            return view('laporan.maintenance.review',compact(['filter','tools','id']));
+        }
 
-        return view('laporan.maintenance.review',compact(['filter','tools','id']));
     }
 
     public function reviewPenggunaan($id,Request $request)
@@ -42,15 +46,23 @@ class ResumeController extends Controller
             $petugas = Personil::findOrFail($personil);
         }
 
-        return view('laporan.penggunaan.review',compact(['filter','tools','id','petugas']));
+        if($tools[0]->alat->nama_alat == 'vidas'){
+            return view('laporan.vidas.review',compact(['filter','tools','id','petugas']));
+        }else{
+            return view('laporan.penggunaan.review',compact(['filter','tools','id','petugas']));
+        }
+
     }
 
     public function reviewPemeliharaan($id,Request $request)
     {
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
-
-        return view('laporan.pemeliharaan.review',compact(['filter','tools','id']));
+        if($tools[0]->alat->nama_alat == 'vidas'){
+            return view('laporan.vidas.review',compact(['filter','tools','id']));
+        }else{
+            return view('laporan.pemeliharaan.review',compact(['filter','tools','id']));
+        }
     }
 
     public function reviewMonitor($id,Request $request)
@@ -63,7 +75,12 @@ class ResumeController extends Controller
             $petugas = Personil::findOrFail($personil);
         }
 
-        return view('laporan.monitoring.review',compact(['filter','tools','id','petugas']));
+        if($tools[0]->alat->nama_alat == 'vidas'){
+            return view('laporan.vidas.review',compact(['filter','tools','id','petugas']));
+        }else{
+            return view('laporan.monitoring.review',compact(['filter','tools','id','petugas']));
+        }
+
     }
 
     public function cetakMaintenance($id,Request $request)
@@ -71,7 +88,13 @@ class ResumeController extends Controller
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
-        $pdf = PDF::loadview('laporan.maintenance.cetak',compact(['filter','tools']));
+        $pdf = null;
+        if ($tools[0]->alat->nama_alat == 'vidas') {
+            $judul = "Maintenance";
+            $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
+        }else{
+            $pdf = PDF::loadview('laporan.maintenance.cetak',compact(['filter','tools']));
+        }
         return $pdf->setPaper('a4', 'landscape')->download('Laporan Maintenance Alat '.$alat->nama_alat.'.pdf');
     }
 
@@ -85,7 +108,13 @@ class ResumeController extends Controller
         if ($personil != null) {
             $petugas = Personil::findOrFail($personil);
         }
-        $pdf = PDF::loadview('laporan.penggunaan.cetak',compact(['filter','tools','petugas']));
+        $pdf = null;
+        if ($tools[0]->alat->nama_alat == 'vidas') {
+            $judul = "Penggunaan Alat";
+            $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
+        }else{
+            $pdf = PDF::loadview('laporan.penggunaan.cetak',compact(['filter','tools','petugas']));
+        }
         return $pdf->setPaper('a4', 'landscape')->download('Laporan Penggunaan Alat '.$alat->nama_alat.'.pdf');
     }
 
@@ -94,7 +123,13 @@ class ResumeController extends Controller
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
-        $pdf = PDF::loadview('laporan.pemeliharaan.cetak',compact(['filter','tools']));
+        $pdf = null;
+        if ($tools[0]->alat->nama_alat == 'vidas') {
+            $judul = "Pemeliharaan Alat";
+            $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
+        }else{
+            $pdf = PDF::loadview('laporan.pemeliharaan.cetak',compact(['filter','tools']));
+        }
         return $pdf->setPaper('a4', 'landscape')->download('Laporan Pemeliharaan Alat '.$alat->nama_alat.'.pdf');
     }
 
@@ -108,7 +143,13 @@ class ResumeController extends Controller
         if ($personil != null) {
             $petugas = Personil::findOrFail($personil);
         }
-        $pdf = PDF::loadview('laporan.monitoring.cetak',compact(['filter','tools','petugas']));
+        $pdf = null;
+        if ($tools[0]->alat->nama_alat == 'vidas') {
+            $judul = "Monitoring Dan Evaluasi";
+            $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
+        }else{
+            $pdf = PDF::loadview('laporan.monitoring.cetak',compact(['filter','tools','petugas']));
+        }
         return $pdf->setPaper('a4', 'landscape')->download('Laporan Monitoring dan Evaluasi Alat '.$alat->nama_alat.'.pdf');
     }
 }

@@ -60,6 +60,10 @@
                                     <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="urinalisis" wire:model="jenis">
                                     <label class="custom-control-label" for="customRadio3">Urinalisis</label>
                                 </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input" value="imunoserologi" wire:model="jenis">
+                                    <label class="custom-control-label" for="customRadio4">Imunoserologi</label>
+                                </div>
                             </div>
                         </div>
 

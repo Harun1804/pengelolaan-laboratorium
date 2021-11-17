@@ -158,6 +158,36 @@
                                         </ul>
                                     </div>
                                 </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav4">
+                                        <span class="sub-item">Imunoserologi</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav4">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="{{ route('patologi.imunoserologi.maintenance') }}">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('patologi.imunoserologi.penggunaan') }}">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('patologi.imunoserologi.pemeliharaan') }}">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('patologi.imunoserologi.monitoring') }}">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -254,6 +284,36 @@
                                             </li>
                                             <li>
                                                 <a href="{{ route('resume.urinalisis.monitoring.index') }}">
+                                                    <span class="sub-item">Monitoring dan Evaluasi</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav7">
+                                        <span class="sub-item">Imunoserologi</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav7">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="{{ route('resume.imunoserologi.maintenance.index') }}">
+                                                    <span class="sub-item">Maintenance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('resume.imunoserologi.penggunaan.index') }}">
+                                                    <span class="sub-item">Penggunaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('resume.imunoserologi.pemeliharaan.index') }}">
+                                                    <span class="sub-item">Pemeliharaan Alat</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('resume.imunoserologi.monitoring.index') }}">
                                                     <span class="sub-item">Monitoring dan Evaluasi</span>
                                                 </a>
                                             </li>
