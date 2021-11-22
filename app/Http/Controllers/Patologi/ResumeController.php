@@ -28,7 +28,7 @@ class ResumeController extends Controller
     {
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
-        if($tools[0]->alat->nama_alat == 'vidas'){
+        if(in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])){
             return view('laporan.vidas.review',compact(['filter','tools','id']));
         }else{
             return view('laporan.maintenance.review',compact(['filter','tools','id']));
@@ -46,7 +46,7 @@ class ResumeController extends Controller
             $petugas = Personil::findOrFail($personil);
         }
 
-        if($tools[0]->alat->nama_alat == 'vidas'){
+        if(in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])){
             return view('laporan.vidas.review',compact(['filter','tools','id','petugas']));
         }else{
             return view('laporan.penggunaan.review',compact(['filter','tools','id','petugas']));
@@ -58,7 +58,7 @@ class ResumeController extends Controller
     {
         $filter = $request->segment(2);
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
-        if($tools[0]->alat->nama_alat == 'vidas'){
+        if(in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])){
             return view('laporan.vidas.review',compact(['filter','tools','id']));
         }else{
             return view('laporan.pemeliharaan.review',compact(['filter','tools','id']));
@@ -75,7 +75,7 @@ class ResumeController extends Controller
             $petugas = Personil::findOrFail($personil);
         }
 
-        if($tools[0]->alat->nama_alat == 'vidas'){
+        if(in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])){
             return view('laporan.vidas.review',compact(['filter','tools','id','petugas']));
         }else{
             return view('laporan.monitoring.review',compact(['filter','tools','id','petugas']));
@@ -89,7 +89,7 @@ class ResumeController extends Controller
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
         $pdf = null;
-        if ($tools[0]->alat->nama_alat == 'vidas') {
+        if (in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])) {
             $judul = "Maintenance";
             $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
         }else{
@@ -109,7 +109,7 @@ class ResumeController extends Controller
             $petugas = Personil::findOrFail($personil);
         }
         $pdf = null;
-        if ($tools[0]->alat->nama_alat == 'vidas') {
+        if (in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])) {
             $judul = "Penggunaan Alat";
             $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
         }else{
@@ -124,7 +124,7 @@ class ResumeController extends Controller
         $tools = DetailAlat::with(['alat','kegiatan'])->where('alat_id',$id)->get();
         $alat = Alat::findOrFail($id);
         $pdf = null;
-        if ($tools[0]->alat->nama_alat == 'vidas') {
+        if (in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])) {
             $judul = "Pemeliharaan Alat";
             $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
         }else{
@@ -144,7 +144,7 @@ class ResumeController extends Controller
             $petugas = Personil::findOrFail($personil);
         }
         $pdf = null;
-        if ($tools[0]->alat->nama_alat == 'vidas') {
+        if (in_array($tools[0]->alat->nama_alat,['vidas','Vidas'])) {
             $judul = "Monitoring Dan Evaluasi";
             $pdf = PDF::loadview('laporan.vidas.cetak',compact(['judul','filter','tools']));
         }else{
