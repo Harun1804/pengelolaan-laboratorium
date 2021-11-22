@@ -201,11 +201,11 @@
                         <div class="collapse" id="resume">
                             <ul class="nav nav-collapse">
                                 <li>
-                                    <a data-toggle="collapse" href="#subnav4">
+                                    <a data-toggle="collapse" href="#subnav5">
                                         <span class="sub-item">Kimia Klinik</span>
                                         <span class="caret"></span>
                                     </a>
-                                    <div class="collapse" id="subnav4">
+                                    <div class="collapse" id="subnav5">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
                                                 <a href="{{ route('resume.kimia.maintenance.index') }}">
@@ -231,11 +231,11 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a data-toggle="collapse" href="#subnav5">
+                                    <a data-toggle="collapse" href="#subnav6">
                                         <span class="sub-item">Hematologi</span>
                                         <span class="caret"></span>
                                     </a>
-                                    <div class="collapse" id="subnav5">
+                                    <div class="collapse" id="subnav6">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
                                                 <a href="{{ route('resume.hematologi.maintenance.index') }}">
@@ -261,11 +261,11 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a data-toggle="collapse" href="#subnav6">
+                                    <a data-toggle="collapse" href="#subnav7">
                                         <span class="sub-item">Urinalisis</span>
                                         <span class="caret"></span>
                                     </a>
-                                    <div class="collapse" id="subnav6">
+                                    <div class="collapse" id="subnav7">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
                                                 <a href="{{ route('resume.urinalisis.maintenance.index') }}">
@@ -291,11 +291,11 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a data-toggle="collapse" href="#subnav7">
+                                    <a data-toggle="collapse" href="#subnav8">
                                         <span class="sub-item">Imunoserologi</span>
                                         <span class="caret"></span>
                                     </a>
-                                    <div class="collapse" id="subnav7">
+                                    <div class="collapse" id="subnav8">
                                         <ul class="nav nav-collapse subnav">
                                             <li>
                                                 <a href="{{ route('resume.imunoserologi.maintenance.index') }}">
